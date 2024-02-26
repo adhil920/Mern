@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import View from './View';
+import Login from './Login'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './Home';
+import Update from './Update';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <BrowserRouter>
+   <Routes>
+  <Route path='/'   element={<Login/>}>
+    
+   
+
+  </Route>
+<Route path='/signup'  element={<App/>}></Route>
+<Route path='/home'  element={<Home/>}></Route>
+<Route path='/update/:id' element={<Update/>}></Route>
+<Route path='/view' element={<View/>}></Route>
+
+
+   </Routes>
+   
+   </BrowserRouter>
+    
   </React.StrictMode>
 );
 
